@@ -1,0 +1,16 @@
+package com.jon.mySpring;
+
+public class test {
+    public static void main(String[] args) {
+
+        MyAnnotationConfigApplicationContext applicationContext = new MyAnnotationConfigApplicationContext("com.jon.mySpring.entity");
+
+        System.out.println(applicationContext.getBeanDefinitionCount());
+
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+            System.out.println(applicationContext.getBean(beanDefinitionName));
+        }
+    }
+}
